@@ -203,6 +203,10 @@ Neither free distribution nor a research label establishes an exemption.
 See [EU_MEDICAL_USE.md](Docs/EU_MEDICAL_USE.md).
 
 ## Contributing and publication
+<img width="980" height="760" alt="Bildschirmfoto 2026-11-24 um 12 35 27" src="https://github.com/user-attachments/assets/a790bfbf-4a4a-4d8f-aeb8-d7ad02fdcc04" />
+<img width="1345" height="764" alt="Bildschirmfoto 2026-11-24 um 12 35 16" src="https://github.com/user-attachments/assets/cbdeb1f4-a47e-4bf5-a3bf-d0062f7732f6" />
+<img width="1348" height="765" alt="Bildschirmfoto 2026-11-24 um 12 34 57" src="https://github.com/user-attachments/assets/78dbbaf7-cd96-4515-868b-e184dde9eb53" />
+
 
 See [CONTRIBUTING.md](CONTRIBUTING.md), [SECURITY.md](SECURITY.md),
 [CHANGELOG.md](CHANGELOG.md) and [RELEASING.md](Docs/RELEASING.md).
