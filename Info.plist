@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0"><dict>
+  <key>CFBundleIdentifier</key><string>de.isixplugins.leberquant</string>
+  <key>CFBundleDisplayName</key><string>Liver IronLoad</string>
+  <key>CFBundleName</key><string>Liver IronLoad</string>
+  <key>CFBundleExecutable</key><string>IsiXLeberQuant</string>
+  <key>CFBundlePackageType</key><string>BNDL</string>
+  <key>CFBundleShortVersionString</key><string>0.8</string>
+  <key>CFBundleVersion</key><string>80</string>
+  <key>NSPrincipalClass</key><string>IsiXLeberQuant.IsiXLeberQuantPlugin</string>
+  <key>IsiXPluginAPIVersion</key><integer>1</integer>
+  <key>IsiXPluginCapabilities</key><array><string>viewer.read</string><string>database.read</string><string>viewer.4d</string><string>roi</string></array>
+  <key>LSMinimumSystemVersion</key><string>15.0</string>
+</dict></plist>

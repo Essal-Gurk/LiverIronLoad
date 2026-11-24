@@ -1,0 +1,49 @@
+name: Build and test ARM64
+on:
+  workflow_dispatch:
+    inputs:
+      runner:
+        description: ARM64 macOS runner label with Xcode 27.2 or later
+        default: macos-latest
+        required: true
+        type: string
+permissions:
+  contents: read
+jobs:
+  build:
+    runs-on: ${{ inputs.runner }}
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - name: Select compatible Xcode
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          import glob, os, plistlib, subprocess
+          candidates = []
+          for app in glob.glob('/Applications/Xcode*.app'):
+              try:
+                  with open(app + '/Contents/Info.plist', 'rb') as f:
+                      version = tuple(int(x) for x in plistlib.load(f)['CFBundleShortVersionString'].split('.'))
+                  if version >= (27, 2):
+                      candidates.append((version, app))
+              except (OSError, ValueError, KeyError):
+                  continue
+          if not candidates:
+              raise SystemExit('Xcode 27.2+ is required. Use a compatible ARM64 macOS runner.')
+          if subprocess.check_output(['uname', '-m'], text=True).strip() != 'arm64':
+              raise SystemExit('Use an ARM64 macOS runner.')
+          with open(os.environ['GITHUB_ENV'], 'a') as f:
+              f.write('DEVELOPER_DIR=' + max(candidates)[1] + '/Contents/Developer\n')
+          PY
+      - name: Core and localization tests
+        run: bash test.sh
+      - name: Build with verified SDK
+        run: bash build.sh "$(bash scripts/fetch-sdk.sh)"
+      - name: Package
+        run: bash scripts/package.sh
+      - uses: actions/upload-artifact@v4
+        with:
+          name: Liver-IronLoad-v0.8-arm64-and-source
+          path: dist/*
+          if-no-files-found: error

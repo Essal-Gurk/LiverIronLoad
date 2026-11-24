@@ -1,2 +1,13 @@
 # Auto detect text files and perform LF normalization
 * text=auto
+
+* text=auto
+*.swift text eol=lf
+*.sh text eol=lf
+*.rb text eol=lf
+*.py text eol=lf
+*.tsv text eol=lf
+*.md text eol=lf
+*.yml text eol=lf
+
+Releases/*.zip binary

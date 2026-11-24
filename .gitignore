@@ -1,0 +1,22 @@
+.DS_Store
+._*
+.build/
+dist/
+*.isixplugin/
+*.zip
+*.dcm
+*.dicom
+*.DCM
+*.DICOM
+*.sqlite*
+Database.sql*
+*.p12
+*.pfx
+*.mobileprovision
+.env
+.env.*
+*.xcuserstate
+xcuserdata/
+
+# Keep the ready-to-install release archive in the repository.
+!Releases/*.zip

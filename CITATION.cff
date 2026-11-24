@@ -1,0 +1,11 @@
+cff-version: 1.2.0
+message: "If you use this software for research, cite this version and the relevant original scientific methods listed in REFERENCES.md."
+title: "Liver IronLoad"
+type: software
+version: "0.8"
+date-released: "2026-11-23"
+license: MIT
+authors:
+  - family-names: Krug
+    given-names: Lasse
+abstract: "Experimental IsiX plugin for ROI-based exploration of liver iron and fat from multi-echo GRE magnitude MRI. Not clinically validated or CE-marked as a medical device."
